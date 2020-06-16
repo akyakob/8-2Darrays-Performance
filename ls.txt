@@ -1,0 +1,51 @@
+ls.txt
+
+ls -l hw8c
+-rwxrwx--- 1 aky8669 student 20376 Mar 27 01:37 hw8c
+
+ls -l hw8c_opt1
+-rwxrwx--- 1 aky8669 student 20424 Mar 26 19:16 hw8c_opt1
+
+ls -l hw8c_opt2
+-rwxrwx--- 1 aky8669 student 20592 Mar 26 19:25 hw8c_opt2
+
+ls -l hw8c_opt3
+-rwxrwx--- 1 aky8669 student 20976 Mar 27 00:53 hw8c_opt3
+
+ls -l hw8c_0
+-rwxrwx--- 1 aky8669 student 16688 Mar 26 17:59 hw8c_0
+
+ls -l hw8c_opt1_0
+-rwxrwx--- 1 aky8669 student 16720 Mar 26 19:18 hw8c_opt1_0
+
+ls -l hw8c_opt2_0
+-rwxrwx--- 1 aky8669 student 16752 Mar 26 19:40 hw8c_opt2_0
+
+ls -l hw8c_opt3_0
+-rwxrwx--- 1 aky8669 student 16840 Mar 27 00:55 hw8c_opt3_0
+
+ls -l hw8c_2
+-rwxrwx--- 1 aky8669 student 20744 Mar 26 18:40 hw8c_2
+
+ls -l hw8c_opt1_2
+-rwxrwx--- 1 aky8669 student 20656 Mar 26 19:20 hw8c_opt1_2
+
+ls -l hw8c_opt2_2
+-rwxrwx--- 1 aky8669 student 20968 Mar 26 19:43 hw8c_opt2_2
+
+ls -l hw8c_opt3_2
+-rwxrwx--- 1 aky8669 student 21344 Mar 27 00:58 hw8c_opt3_2
+
+ls -l hw8c_3
+-rwxrwx--- 1 aky8669 student 23480 Mar 26 18:43 hw8c_3
+
+ls -l hw8c_opt1_3
+-rwxrwx--- 1 aky8669 student 22928 Mar 26 19:23 hw8c_opt1_3
+
+ls -l hw8c_opt2_3
+-rwxrwx--- 1 aky8669 student 21600 Mar 26 19:48 hw8c_opt2_3
+
+ls -l hw8c_opt3_3
+-rwxrwx--- 1 aky8669 student 21976 Mar 27 01:00 hw8c_opt3_3
+
+

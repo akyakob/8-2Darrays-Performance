@@ -1,0 +1,235 @@
+
+final list of c code:
+hw8c.c      hw8c_opt1.c    hw8c_opt2.c    hw8c_opt3.c
+
+
+list of output binaries: 
+hw8c        hw8c_0         hw8c_2         hw8c_3         hw8c_mem
+hw8c_opt1   hw8c_opt1_0    hw8c_opt1_2    hw8c_opt1_3    hw8c_opt1_mem
+hw8c_opt2   hw8c_opt2_0    hw8c_opt2_2    hw8c_opt2_3    hw8c_opt2_mem
+hw8c_opt3   hw8c_opt3_0    hw8c_opt3_2    hw8c_opt3_3    hw8c_opt3_mem
+
+
+Sample results from ONE run of make test, note the app description,
+Your timing WILL be different:
+/hw8c_0- data.txt
+Elapsed CPU Time (DataTimer) = 4.64062 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  4.64e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.5625 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  2.81e-05 sec.
+
+Base code,no performance changes
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c data.txt
+Elapsed CPU Time (DataTimer) = 1.78125 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  1.78e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.109375 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  5.47e-06 sec.
+
+Base code,no performance changes
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_2 data.txt
+Elapsed CPU Time (DataTimer) = 1.76562 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  1.77e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.125 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  6.25e-06 sec.
+
+Base code,no performance changes
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_3 data.txt
+Elapsed CPU Time (DataTimer) = 1.71875 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  1.72e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.125 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  6.25e-06 sec.
+
+Base code,no performance changes
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_opt1_0- data.txt
+Elapsed CPU Time (DataTimer) = 0.203125 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  2.03e-03 sec.
+Elapsed CPU Time (CalcTimer) = 0.703125 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  3.52e-05 sec.
+
+Adds x2 memory growth and realloc to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_opt1 data.txt
+Elapsed CPU Time (DataTimer) = 0.234375 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  2.34e-03 sec.
+Elapsed CPU Time (CalcTimer) = 0.125 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  6.25e-06 sec.
+
+Adds x2 memory growth and realloc to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_opt1_2 data.txt
+Elapsed CPU Time (DataTimer) = 0.234375 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  2.34e-03 sec.
+Elapsed CPU Time (CalcTimer) = 0.109375 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  5.47e-06 sec.
+
+Adds x2 memory growth and realloc to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_opt1_3 data.txt
+Elapsed CPU Time (DataTimer) = 0.1875 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  1.87e-03 sec.
+Elapsed CPU Time (CalcTimer) = 0.140625 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  7.03e-06 sec.
+
+Adds x2 memory growth and realloc to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_opt2_0- data.txt
+Elapsed CPU Time (DataTimer) = 4.75 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  4.75e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.4375 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  2.19e-05 sec.
+
+Adds native loop unrolling to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_opt2 data.txt
+Elapsed CPU Time (DataTimer) = 1.64062 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  1.64e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.109375 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  5.47e-06 sec.
+
+Adds native loop unrolling to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_opt2_2 data.txt
+Elapsed CPU Time (DataTimer) = 1.71875 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  1.72e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.109375 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  5.47e-06 sec.
+
+Adds native loop unrolling to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_opt2_3 data.txt
+Elapsed CPU Time (DataTimer) = 1.6875 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  1.69e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.125 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  6.25e-06 sec.
+
+Adds native loop unrolling to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_opt3_0- data.txt
+Elapsed CPU Time (DataTimer) = 4.67188 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  4.67e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.40625 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  2.03e-05 sec.
+
+Adds smarter loop unrolling to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_opt3 data.txt
+Elapsed CPU Time (DataTimer) = 1.625 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  1.63e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.09375 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  4.69e-06 sec.
+
+Adds smarter loop unrolling to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_opt3_2 data.txt
+Elapsed CPU Time (DataTimer) = 1.875 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  1.87e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.09375 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  4.69e-06 sec.
+
+Adds smarter loop unrolling to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+./hw8c_opt3_3 data.txt
+Elapsed CPU Time (DataTimer) = 1.78125 sec.
+Elapsed CPU Time per Iteration (DataTimer, 100) =  1.78e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.09375 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 20000) =  4.69e-06 sec.
+
+Adds smarter loop unrolling to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+
+
+Sample results from ONE run of make mem, note the app description.
+valgrind --tool=memcheck --leak-check=yes --track-origins=yes ./hw8c_mem data.txt
+==151== Memcheck, a memory error detector
+==151== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==151== Using Valgrind-3.14.0.SVN and LibVEX; rerun with -h for copyright info
+==151== Command: ./hw8c_mem data.txt
+==151== 
+
+Base code,no performance changes
+The best least square line is : Y = 1.26393 * X + 0.823035
+==151== 
+==151== HEAP SUMMARY:
+==151==     in use at exit: 0 bytes in 0 blocks
+==151==   total heap usage: 10,003 allocs, 10,003 frees, 200,120,584 bytes allocated
+==151== 
+==151== All heap blocks were freed -- no leaks are possible
+==151== 
+==151== For counts of detected and suppressed errors, rerun with: -v
+==151== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+valgrind --tool=memcheck --leak-check=yes --track-origins=yes ./hw8c_mem data.txt
+==154== Memcheck, a memory error detector
+==154== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==154== Using Valgrind-3.14.0.SVN and LibVEX; rerun with -h for copyright info
+==154== Command: ./hw8c_mem data.txt
+==154== 
+
+Base code,no performance changes
+The best least square line is : Y = 1.26393 * X + 0.823035
+==154== 
+==154== HEAP SUMMARY:
+==154==     in use at exit: 0 bytes in 0 blocks
+==154==   total heap usage: 10,003 allocs, 10,003 frees, 200,120,584 bytes allocated
+==154== 
+==154== All heap blocks were freed -- no leaks are possible
+==154== 
+==154== For counts of detected and suppressed errors, rerun with: -v
+==154== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+valgrind --tool=memcheck --leak-check=yes --track-origins=yes ./hw8c_opt1_mem data.txt
+==157== Memcheck, a memory error detector
+==157== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==157== Using Valgrind-3.14.0.SVN and LibVEX; rerun with -h for copyright info
+==157== Command: ./hw8c_opt1_mem data.txt
+==157== 
+
+Adds x2 memory growth and realloc to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+==157== 
+==157== HEAP SUMMARY:
+==157==     in use at exit: 0 bytes in 0 blocks
+==157==   total heap usage: 15 allocs, 15 frees, 203,768 bytes allocated
+==157== 
+==157== All heap blocks were freed -- no leaks are possible
+==157== 
+==157== For counts of detected and suppressed errors, rerun with: -v
+==157== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+valgrind --tool=memcheck --leak-check=yes --track-origins=yes ./hw8c_opt2_mem data.txt
+==160== Memcheck, a memory error detector
+==160== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==160== Using Valgrind-3.14.0.SVN and LibVEX; rerun with -h for copyright info
+==160== Command: ./hw8c_opt2_mem data.txt
+==160== 
+
+Adds native loop unrolling to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+==160== 
+==160== HEAP SUMMARY:
+==160==     in use at exit: 0 bytes in 0 blocks
+==160==   total heap usage: 10,003 allocs, 10,003 frees, 200,120,584 bytes allocated
+==160== 
+==160== All heap blocks were freed -- no leaks are possible
+==160== 
+==160== For counts of detected and suppressed errors, rerun with: -v
+==160== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+valgrind --tool=memcheck --leak-check=yes --track-origins=yes ./hw8c_opt3_mem data.txt
+==163== Memcheck, a memory error detector
+==163== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==163== Using Valgrind-3.14.0.SVN and LibVEX; rerun with -h for copyright info
+==163== Command: ./hw8c_opt3_mem data.txt
+==163== 
+
+Adds smarter loop unrolling to the base code
+The best least square line is : Y = 1.26393 * X + 0.823035
+==163== 
+==163== HEAP SUMMARY:
+==163==     in use at exit: 0 bytes in 0 blocks
+==163==   total heap usage: 10,003 allocs, 10,003 frees, 200,120,584 bytes allocated
+==163== 
+==163== All heap blocks were freed -- no leaks are possible
+==163== 
+==163== For counts of detected and suppressed errors, rerun with: -v
+==163== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

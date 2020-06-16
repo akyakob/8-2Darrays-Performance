@@ -1,0 +1,69 @@
+Anita Yakobchuk
+exercise.txt
+
+8) The lab_a.c implementation was faster
+Elapsed timer and repeat timer were 4X faster (24.6% faster) which correlated with the data returned    from the "time" command line feature.
+
+10) valgrind for lab_a2
+
+==21619== Memcheck, a memory error detector
+==21619== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==21619== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==21619== Command: ./lab_a2
+==21619== 
+Elasped time: 1.100000e-01
+Repeat timer: 5.500000e-02
+==21619== 
+==21619== HEAP SUMMARY:
+==21619==     in use at exit: 0 bytes in 0 blocks
+==21619==   total heap usage: 4 allocs, 4 frees, 16,160,000 bytes allocated
+==21619== 
+==21619== All heap blocks were freed -- no leaks are possible
+==21619== 
+==21619== For counts of detected and suppressed errors, rerun with: -v
+==21619== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+valgrind for lab_c2
+
+==21671== Memcheck, a memory error detector
+==21671== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==21671== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==21671== Command: ./lab_c2
+==21671== 
+Elasped time: 1.700000e-01
+Repeat timer: 8.500000e-02
+==21671== 
+==21671== HEAP SUMMARY:
+==21671==     in use at exit: 0 bytes in 0 blocks
+==21671==   total heap usage: 20,002 allocs, 20,002 frees, 16,160,000 bytes allocated
+==21671== 
+==21671== All heap blocks were freed -- no leaks are possible
+==21671== 
+==21671== For counts of detected and suppressed errors, rerun with: -v
+==21671== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+11) lab_a2 with size feature
+   
+   text	   data	    bss	    dec	    hex	filename
+   2459	    588	     16	   3063	    bf7	./lab_a2
+  
+lab_c2 with size feature
+   text	   data	    bss	    dec	    hex	filename
+   2410	    580	     16	   3006	    bbe	./lab_c2
+
+I notice that the sizes are very similar and not significantly different only a2 was slightly bigger.
+
+13) lab_a3 output
+The 3x3 2D dynamic matrix
+ 0.0	 0.1	 0.2	
+ 1.0	 1.1	 1.2	
+ 2.0	 2.1	 2.2	
+
+lab_c3 output
+The 3x3 2D dynamic matrix
+ 0.0	 0.1	 0.2	
+ 1.0	 1.1	 1.2	
+ 2.0	 2.1	 2.2	
+
+They output the same matrix and run the initialization and print routines since EN_TIME was
+not enabled.

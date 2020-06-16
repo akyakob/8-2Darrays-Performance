@@ -1,0 +1,319 @@
+Analysis
+
+_________________________DATA OUTPUTS WHEN RUN___________________________________
+hw8c
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+hw8c_opt1
+Implementation of the realloc method
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+hw8c_opt2
+Implementation with simple loop unrolling
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+hw8c_opt3
+Implementation with more complex loop unrolling method
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+____________________________________________________________________________________
+
+
+
+____________________________________DATA TABLE_______________________________________
+			     ./hw8c_0       ./hw8c      ./hw8c_2     ./hw8c_3
+-------------------------------------------------------------------------------------
+Data timer per iteration:   0.06311100    0.01798000   0.01683000   0.01710000      
+-------------------------------------------------------------------------------------
+Calculation timer per iter: 0.00003200    0.00000683   0.00000650   0.00000695
+--------------------------------------------------------------------------------------
+ls -la                  :    16688          20376        20744        23480
+--------------------------------------------------------------------------------------
+text (code) size        :    2690            1458         1474         1842
+--------------------------------------------------------------------------------------
+data size               :    512              336         336          336
+
+                           ./hw8c_opt1_0 ./hw8c_opt1  ./hw8c_opt1_2 ./hw8c_opt1_3
+-------------------------------------------------------------------------------------
+Data timer per iteration:   0.00275000    0.00273000   0.00275000    0.00271000
+-----------------i--------------------------------------------------------------------
+Calculation timer per iter: 0.00003225    0.00000675   0.00000675    0.00000688
+--------------------------------------------------------------------------------------
+ls -la                  :     16720         20424        20656          22928
+--------------------------------------------------------------------------------------
+text (code) size        :     2578           1378         1378          1650
+--------------------------------------------------------------------------------------
+data size               :     552            376          376           376
+
+                           ./hw8c_opt2_0  ./hw8c_opt2 ./hw8c_opt2_2 ./hw8c_opt2_3 
+-------------------------------------------------------------------------------------
+Data timer per iteration:   0.00910500     0.01771000  0.01635000    0.01630000  
+-------------------------------------------------------------------------------------
+Calculation timer per iter: 0.00003025     0.00000675  0.00000675    0.00000677
+--------------------------------------------------------------------------------------
+ls -la                  :    16752           20592       20968         21600
+--------------------------------------------------------------------------------------
+text (code) size        :    3170            1586        1602          1810
+--------------------------------------------------------------------------------------
+data size               :    560              384        384            384
+ 
+                           ./hw8c_opt3_0 ./hw8c_opt3 ./hw8c_opt3_2 ./hw8c_opt3_3 
+-------------------------------------------------------------------------------------
+Data timer per iteration:   0.11100000    0.01760000  0.01645000    0.01640000  
+-------------------------------------------------------------------------------------
+Calculation timer per iter: 0.00002840    0.00000575  0.00000475    0.00000475
+--------------------------------------------------------------------------------------
+ls -la                  :    16840          20976       21344        21976
+--------------------------------------------------------------------------------------
+text (code) size        :     3314          1667         1667         1874
+--------------------------------------------------------------------------------------
+data size               :     568           392           392          392
+______________________________________________________________________________________
+
+
+___________________________ANSWERS TO QUESTIONS______________________________
+
+The data in the table contrasts in various ways. The table shows that the 
+data and calculation times are faster in the hw8c_opt1.c code where the realloc
+method was implemented than the hw8c.c code where there were malloc and frees.
+The calculation timer for the -O0 optimization level was faster than the 
+other levels for both hw8c.c and hw8c_opt1.c code. Compared to hw8c.c, the
+hw8c_opt1 file had smaller amounts for text size but greater amounts for data
+size. For the code in hw8c.c,
+hw8c_opt1.c, hw8c_opt2.c, hw8c_opt3.c, it can be concluded that each of their
+calculation timers were the slowest at the -O0 optimization level and the 
+quickest at the -O3 optimization level. Each time the C files were compiled
+with the -O0 optimization, they had the smallest amount for the file size,
+but the text size and data size were the largest. Having a higher level
+optimization level like -O2 and -O3 helped to decrease the text size and data
+size for each C file. 
+For hw8c.c and hw8c_opt2, the data timer was faster for hw8c_opt2 for each
+optimization and for calculation timer there wasn't a significant differnce
+for the two file but the hw8c.c has slightly faster times. The hw8c_opt2.c
+had a greater file size than hw8c.c for each optimization level. The hw8c_opt2.c
+file also had greater text size and data size values for each optimization
+level.
+For hw8c.c and hw8c_opt3.c, hw8c.c had faster data and calculation timers.
+The hw8c.c file had smaller file sizes for the first three optimization
+levels except for -O3 where hw8c_opt3.c had a smaller file size. In this case,
+a higher level optimization level helped decrease file size. The hw8c.c file
+had smaller amounts for text size and data size except for the -O3 level where
+hw8c_opt3 had a smaller text size. 
+For higher optimization levels, it helped by making the binary file size, 
+text size, and data size smaller in most cases.
+In hw8c_opt3 where there was a more complex loop unrolling method, it was not
+much faster than the simple loop unrolling method in hw8c_opt2. In fact,
+based on the data they are almost the same but the calculation timer was
+faster for the opt2 method.
+_____________________________________________________________________________
+
+
+___________________________VALGRIND OUTPUTS_______________________________________
+FOR hw8c
+==17862== Memcheck, a memory error detector
+==17862== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==17862== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==17862== Command: ./hw8c_mem data.txt
+==17862== 
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+==17862== 
+==17862== HEAP SUMMARY:
+==17862==     in use at exit: 0 bytes in 0 blocks
+==17862==   total heap usage: 10,003 allocs, 10,003 frees, 200,120,584 bytes allocated
+==17862== 
+==17862== All heap blocks were freed -- no leaks are possible
+==17862== 
+==17862== For counts of detected and suppressed errors, rerun with: -v
+==17862== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+FOR hw8c_opt1_mem
+==17577== Memcheck, a memory error detector
+==17577== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==17577== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==17577== Command: ./hw8c_opt1_mem data.txt
+==17577== 
+Implementation of the realloc method
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+==17577== 
+==17577== HEAP SUMMARY:
+==17577==     in use at exit: 0 bytes in 0 blocks
+==17577==   total heap usage: 10,003 allocs, 10,003 frees, 200,120,584 bytes allocated
+==17577== 
+==17577== All heap blocks were freed -- no leaks are possible
+==17577== 
+==17577== For counts of detected and suppressed errors, rerun with: -v
+==17577== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+FOR hw8c_opt2_mem
+==17335== Memcheck, a memory error detector
+==17335== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==17335== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==17335== Command: ./hw8c_opt2_mem data.txt
+==17335== 
+Implementation with simple loop unrolling
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+==17335== 
+==17335== HEAP SUMMARY:
+==17335==     in use at exit: 0 bytes in 0 blocks
+==17335==   total heap usage: 10,003 allocs, 10,003 frees, 200,120,584 bytes allocated
+==17335== 
+==17335== All heap blocks were freed -- no leaks are possible
+==17335== 
+==17335== For counts of detected and suppressed errors, rerun with: -v
+==17335== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+FOR hw8c_opt3_mem
+==17045== Memcheck, a memory error detector
+==17045== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==17045== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==17045== Command: ./hw8c_opt3_mem data.txt
+==17045== 
+Implementation with more complex loop unrolling method
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+==17045== 
+==17045== HEAP SUMMARY:
+==17045==     in use at exit: 0 bytes in 0 blocks
+==17045==   total heap usage: 10,003 allocs, 10,003 frees, 200,120,584 bytes allocated
+==17045== 
+==17045== All heap blocks were freed -- no leaks are possible
+==17045== 
+==17045== For counts of detected and suppressed errors, rerun with: -v
+==17045== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+_________________________________________________________________________________
+
+
+______________________AVERAGE RAW TIMING DATA________________________________
+			TIMINGS FOR hw8c
+Base code, no performance changes, -O1 optimization level
+./hw8c data.txt
+Elapsed CPU Time (DataTimer) = 1.79 sec.
+CPU Time per Iteration (DataTimer, 100) = 1.79e-02 sec.
+Elapsed CPU Time (CalculationsTimer) = 1.366e-01 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 6.833e-06  sec.
+50000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+Base code, no performance changes
+-O0 optimization level
+./hw8c_0
+Elapsed CPU Time (DataTimer) = 10.43 sec.
+CPU Time per Iteration (DataTimer, 100) = 6.311e-02 sec.
+Elapsed CPU Time (CalculationsTimer) = 6.4e-01 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 3.2e-05  sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+Base code, no performance changes
+-O2 optimization level
+./hw8c_2
+Elapsed CPU Time (DataTimer) = 1.67 sec.
+CPU Time per Iteration (DataTimer, 100) = 1.68e-02 sec.
+Elapsed CPU Time (CalculationsTimer) = 1.3e-01 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 6.5e-06 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+Base code, no performance changes
+-O3 optimization level
+./hw8c_3
+Elapsed CPU Time (DataTimer) = 1.71 sec.
+CPU Time per Iteration (DataTimer, 100) = 1.71e-02 sec.
+Elapsed CPU Time (CalculationsTimer) = 1.3e-01 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 6.5e-06 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+			TIMINGS FOR hw8c_opt1
+Base code, no performance changes
+-O1 optimization level
+./hw8c_opt1
+Elapsed CPU Time (DataTimer) = 5.4e-01 sec.
+CPU Time per Iteration (DataTimer, 100) = 2.7e-03 sec.
+Elapsed CPU Time (CalculationsTimer) =  2.8e-01 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) =  6.75e-06sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+-O0 optimization level
+./hw8c_opt1_0
+Elapsed CPU Time (DataTimer) = 5.5e-01 sec.
+CPU Time per Iteration (DataTimer, 100) = 2.75e-03 sec.
+Elapsed CPU Time (CalculationsTimer) = 1.29 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 3.225e-05 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+-O2 optimization level
+./hw8c_opt1_2
+Elapsed CPU Time (DataTimer) = 0.55 sec.
+CPU Time per Iteration (DataTimer, 100) = 2.75e-03 sec.
+Elapsed CPU Time (CalculationsTimer) = 0.27 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 6.75e-06 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+-O3 optimization level
+./hw8c_opt1_3
+Elapsed CPU Time (DataTimer) = 0.54 sec.
+CPU Time per Iteration (DataTimer, 100) = 2.7e-03 sec.
+Elapsed CPU Time (CalculationsTimer) = 2.8e-01 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 6.88e-06 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+			TIMINGS FOR hw8c_opt2
+-O1 optimization level
+./hw8c_opt2
+Elapsed CPU Time (DataTimer) = 3.54 sec.
+CPU Time per Iteration (DataTimer, 100) = 1.77e-02 sec.
+Elapsed CPU Time (CalculationsTimer) = 0.27 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 6.75e-06 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+-O0 optimization level
+./hw8c_opt2_0
+Elapsed CPU Time (DataTimer) = 1.821 sec.
+CPU Time per Iteration (DataTimer, 100) = 9.105e-02 sec.
+Elapsed CPU Time (CalculationsTimer) = 1.21 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 3.025e-05 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+-O2 optimization level
+./hw8c_opt2_2
+Elapsed CPU Time (DataTimer) = 3.27 sec.
+CPU Time per Iteration (DataTimer, 100) = 1.635e-02 sec.
+Elapsed CPU Time (CalculationsTimer) = 0.27 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 6.75e-06 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+-O3 optimization level
+./hw8c_opt2_3
+Elapsed CPU Time (DataTimer) = 3.26 sec.
+CPU Time per Iteration (DataTimer, 100) = 1.63e-02 sec.
+Elapsed CPU Time (CalculationsTimer) = 0.27 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 6.75e-06 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+			TIMINGS FOR hw8c_opt3
+-O1 optimization level
+./hw8c_opt3
+Elapsed CPU Time (DataTimer) = 3.52 sec.
+CPU Time per Iteration (DataTimer, 100) = 1.76e-02 sec.
+Elapsed CPU Time (CalculationsTimer) = 0.23 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 5.75e-06 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+-O0 optimization level
+./hw8c_opt3_0
+Elapsed CPU Time (DataTimer) = 22.2 sec.
+CPU Time per Iteration (DataTimer, 100) = 0.111 sec.
+Elapsed CPU Time (CalculationsTimer) = 1.15 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 2.84e-05 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+-O2 optimization level
+./hw8c_opt3_2
+Elapsed CPU Time (DataTimer) = 3.29 sec.
+CPU Time per Iteration (DataTimer, 100) = 1.645e-02 sec.
+Elapsed CPU Time (CalculationsTimer) = 0.19 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 4.75e-06 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+-O3 optimization level
+./hw8c_opt3_3
+Elapsed CPU Time (DataTimer) = 3.28 sec.
+CPU Time per Iteration (DataTimer, 100) = 1.64e-02 sec.
+Elapsed CPU Time (CalculationsTimer) = 0.19 sec.
+CPU Time per Iteration (CalculationsTimer, 20000) = 4.75e-06 sec.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+
+

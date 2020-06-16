@@ -1,0 +1,44 @@
+---------TESTING HW8C---------
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_0---------
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_2---------
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_3---------
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_OPT1---------
+Implementation of the realloc method
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_OPT1_0---------
+Implementation of the realloc method
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_OPT1_2---------
+Implementation of the realloc method
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_OPT1_3---------
+Implementation of the realloc method
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_OPT2---------
+Implementation with simple loop unrolling
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_OPT2_0---------
+Implementation with simple loop unrolling
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_OPT2_2---------
+Implementation with simple loop unrolling
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_OPT2_3---------
+Implementation with simple loop unrolling
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_OPT3---------
+Implementation with more complex loop unrolling method
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_OPT3_0---------
+Implementation with more complex loop unrolling method
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_OPT3_2---------
+Implementation with more complex loop unrolling method
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+---------TESTING HW8C_OPT3_3---------
+Implementation with more complex loop unrolling method
+5000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
